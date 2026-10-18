@@ -27,7 +27,7 @@ export const authRouter = Router();
 
 const credentials = z.object({
   email: z.string().email(),
-  password: z.string().min(10).max(200),
+  password: z.string().min(8).max(200),
 });
 
 authRouter.post('/register', rateLimit(8, 15 * 60 * 1000, 'register'), async (req, res, next) => {

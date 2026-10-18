@@ -162,7 +162,7 @@ async function seedDemo() {
   const email = 'demo@kontabiliteti.local';
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) return;
-  const passwordHash = await bcrypt.hash(process.env.DEMO_PASSWORD || 'Demo12345!', 12);
+  const passwordHash = await bcrypt.hash(process.env.DEMO_PASSWORD || 'admin123', 12);
   const owner = await prisma.role.findFirstOrThrow({ where: { scopeKey: 'system', key: 'OWNER' } });
   const plan = await prisma.subscriptionPlan.findUniqueOrThrow({ where: { code: 'PROFESSIONAL' } });
   const user = await prisma.user.create({

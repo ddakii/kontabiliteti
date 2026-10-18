@@ -1,0 +1,13 @@
+node_modules
+dist
+coverage
+.env
+.env.local
+.pgdata
+server/storage
+web/dist
+*.log
+.DS_Store
+Thumbs.db
+*.tsbuildinfo
+.prisma

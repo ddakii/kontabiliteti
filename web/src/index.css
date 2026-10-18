@@ -1,0 +1,114 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", "Segoe UI", sans-serif;
+  --font-display: "Outfit", "IBM Plex Sans", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, monospace;
+  --color-canvas: #f7f9fc;
+  --color-ink: #0f172a;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-brand: #023e8a;
+  --color-brand-hover: #03045e;
+  --color-link: #0077b6;
+  --color-sidebar: #03045e;
+  --color-accent: #00b4d8;
+  --color-tint: #caf0f8;
+  --color-success: #15803d;
+  --color-warning: #b45309;
+  --color-danger: #dc2626;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--color-canvas);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+h1,
+h2,
+.font-display {
+  font-family: var(--font-display);
+}
+
+::selection {
+  background: #ade8f4;
+  color: #03045e;
+}
+
+a {
+  color: inherit;
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+thead th {
+  color: #475569;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+tbody tr {
+  transition: background-color 120ms ease;
+}
+
+tbody tr:hover {
+  background: #f3fbfe;
+}
+
+.metric {
+  position: relative;
+  overflow: hidden;
+}
+
+.metric::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 3px;
+  background: #00b4d8;
+}
+
+.chip {
+  border: 1px solid var(--color-line);
+  border-radius: 999px;
+  background: white;
+  color: #475569;
+  padding: 0.375rem 0.8rem;
+  font-size: 0.875rem;
+}
+
+.chip-active {
+  border-color: #0077b6;
+  background: #caf0f8;
+  color: #03045e;
+  font-weight: 600;
+}
+
+@media print {
+  body {
+    background: white;
+  }
+  .no-print {
+    display: none !important;
+  }
+}
